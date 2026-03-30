@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deven Bhalerao - Data Analyst and Business Intelligence professional. View my portfolio, experience, and skills.">
+    <title>Deven Bhalerao | Data Analyst</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#home" class="logo">DB.</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <h1 class="fade-in">Deven Bhalerao</h1>
+            <h2 class="subtitle fade-in">Data Analyst | Business Intelligence</h2>
+            <p class="bio fade-in">
+                Data-driven professional with over 4 years of experience delivering actionable insights, building BI dashboards, and leading analytics initiatives to drive business value.
+            </p>
+            <div class="hero-links fade-in">
+                <a href="https://www.linkedin.com/in/deven-bhalerao/" target="_blank" rel="noopener noreferrer" class="btn">LinkedIn</a>
+                <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
+                <a href="mailto:your.email@example.com" class="btn btn-outline">Email Me</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h3 class="section-title">About Me</h3>
+            <p class="text-block">
+                Highly analytical and detail-oriented professional with a proven track record at companies like JLL and FICO. Recognized with multiple awards (Client Service Champion, Spot Award) for significant stakeholder impact. With a strong foundation in both IT and Business Administration, I excel at bridging the gap between technical data engineering and strategic business operations.
+            </p>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h3 class="section-title">Experience</h3>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h4>Current/Most Recent Role</h4>
+                        <span class="date">Month Year - Present</span>
+                    </div>
+                    <p class="company">Company Name</p>
+                    <ul class="responsibilities">
+                        <li>Architected and developed scalable frontend and backend systems.</li>
+                        <li>Collaborated with cross-functional teams to deliver features on time.</li>
+                        <li>Improved application performance and reduced load times by X%.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h4>Previous Role</h4>
+                        <span class="date">Month Year - Month Year</span>
+                    </div>
+                    <p class="company">Previous Company Name</p>
+                    <ul class="responsibilities">
+                        <li>Developed core features using modern frameworks and standard methodologies.</li>
+                        <li>Mentored junior developers and conducted code reviews.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h3 class="section-title">Skills & Technologies</h3>
+            <div class="skills-grid">
+                <!-- Add or remove skills based on your actual profile -->
+                <span class="skill-tag">JavaScript / TypeScript</span>
+                <span class="skill-tag">React / Next.js</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL / NoSQL</span>
+                <span class="skill-tag">AWS / Cloud</span>
+                <span class="skill-tag">Git / CI-CD</span>
+                <span class="skill-tag">System Design</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> Deven Bhalerao. Built with minimalism in mind.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
