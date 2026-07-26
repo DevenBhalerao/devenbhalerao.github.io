@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <style>
+    .bg { fill: #0b0d12; }
+    .bar { fill: #6f788c; }
+    .bar-hi { fill: #f0a53c; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #f6f3ee; }
+      .bar { fill: #857f74; }
+      .bar-hi { fill: #a6600b; }
+    }
+  </style>
+  <rect class="bg" width="64" height="64" rx="14"/>
+  <rect class="bar"    x="14" y="34" width="8" height="16" rx="3"/>
+  <rect class="bar"    x="28" y="26" width="8" height="24" rx="3"/>
+  <rect class="bar-hi" x="42" y="14" width="8" height="36" rx="3"/>
+</svg>
