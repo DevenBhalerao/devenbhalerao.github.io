@@ -1,110 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Deven Bhalerao - Data Analyst and Business Intelligence professional. View my portfolio, experience, and skills.">
-    <title>Deven Bhalerao | Data Analyst</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deven Bhalerao — Business Intelligence &amp; Analytics</title>
+<meta name="description" content="Deven Bhalerao is a business intelligence specialist working with EMEA and UK markets at dentsu, building reporting in Looker Studio, Power BI and Tableau. Previously JLL and FICO.">
+<meta name="author" content="Deven Bhalerao">
+<link rel="canonical" href="https://devenbhalerao.com/">
+<meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)">
+
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://devenbhalerao.com/">
+<meta property="og:title" content="Deven Bhalerao — Business Intelligence &amp; Analytics">
+<meta property="og:description" content="Business intelligence specialist for EMEA &amp; UK markets at dentsu. Previously JLL and FICO. Looker Studio, Power BI, Tableau, SQL.">
+<meta property="og:image" content="https://devenbhalerao.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Deven Bhalerao — Business Intelligence &amp; Analytics">
+<meta name="twitter:description" content="Business intelligence specialist for EMEA &amp; UK markets at dentsu. Previously JLL and FICO.">
+<meta name="twitter:image" content="https://devenbhalerao.com/assets/og.png">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+
+<script>
+  // Set theme before first paint so there is no flash of the wrong palette.
+  // The `js` class gates the reveal animation — without JS nothing stays hidden.
+  (function () {
+    document.documentElement.classList.add('js');
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') {
+        document.documentElement.dataset.theme = saved;
+      }
+    } catch (e) { /* private mode — fall back to prefers-color-scheme */ }
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Deven Bhalerao",
+  "url": "https://devenbhalerao.com",
+  "email": "mailto:devenbhalerao@gmail.com",
+  "jobTitle": "Business Intelligence Specialist",
+  "worksFor": { "@type": "Organization", "name": "dentsu Global Services" },
+  "address": { "@type": "PostalAddress", "addressCountry": "IN" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Symbiosis Centre for Information Technology" },
+    { "@type": "CollegeOrUniversity", "name": "Don Bosco Institute of Technology, Mumbai University" }
+  ],
+  "knowsAbout": ["Business Intelligence", "Data Analytics", "Looker Studio", "Power BI", "Tableau", "SQL", "Digital Advertising Analytics"],
+  "sameAs": [
+    "https://www.linkedin.com/in/deven-bhalerao/",
+    "https://github.com/DevenBhalerao"
+  ]
+}
+</script>
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="#home" class="logo">DB.</a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-            </div>
-        </div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <a class="monogram" href="#top" aria-label="Deven Bhalerao — back to top">
+      <span>DB</span>
+    </a>
+
+    <nav class="topnav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </nav>
 
-    <main class="container">
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <h1 class="fade-in">Deven Bhalerao</h1>
-            <h2 class="subtitle fade-in">Data Analyst | Business Intelligence</h2>
-            <p class="bio fade-in">
-                Data-driven professional with over 4 years of experience delivering actionable insights, building BI dashboards, and leading analytics initiatives to drive business value.
-            </p>
-            <div class="hero-links fade-in">
-                <a href="https://www.linkedin.com/in/deven-bhalerao/" target="_blank" rel="noopener noreferrer" class="btn">LinkedIn</a>
-                <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
-                <a href="mailto:your.email@example.com" class="btn btn-outline">Email Me</a>
-            </div>
-        </section>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/>
+      </svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="4.2"/>
+        <path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9L5.3 5.3"/>
+      </svg>
+    </button>
+  </div>
+</header>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h3 class="section-title">About Me</h3>
-            <p class="text-block">
-                Highly analytical and detail-oriented professional with a proven track record at companies like JLL and FICO. Recognized with multiple awards (Client Service Champion, Spot Award) for significant stakeholder impact. With a strong foundation in both IT and Business Administration, I excel at bridging the gap between technical data engineering and strategic business operations.
-            </p>
-        </section>
+<main id="main">
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <h3 class="section-title">Experience</h3>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <h4>Current/Most Recent Role</h4>
-                        <span class="date">Month Year - Present</span>
-                    </div>
-                    <p class="company">Company Name</p>
-                    <ul class="responsibilities">
-                        <li>Architected and developed scalable frontend and backend systems.</li>
-                        <li>Collaborated with cross-functional teams to deliver features on time.</li>
-                        <li>Improved application performance and reduced load times by X%.</li>
-                    </ul>
-                </div>
+  <!-- ───────────────────────────── HERO ───────────────────────────── -->
+  <section class="hero" id="top">
+    <div class="hero-grid">
 
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <h4>Previous Role</h4>
-                        <span class="date">Month Year - Month Year</span>
-                    </div>
-                    <p class="company">Previous Company Name</p>
-                    <ul class="responsibilities">
-                        <li>Developed core features using modern frameworks and standard methodologies.</li>
-                        <li>Mentored junior developers and conducted code reviews.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+      <div class="hero-text">
+        <p class="eyebrow reveal">
+          <span class="pulse" aria-hidden="true"></span>
+          Business Intelligence &amp; Analytics · India
+        </p>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <h3 class="section-title">Skills & Technologies</h3>
-            <div class="skills-grid">
-                <!-- Add or remove skills based on your actual profile -->
-                <span class="skill-tag">JavaScript / TypeScript</span>
-                <span class="skill-tag">React / Next.js</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">SQL / NoSQL</span>
-                <span class="skill-tag">AWS / Cloud</span>
-                <span class="skill-tag">Git / CI-CD</span>
-                <span class="skill-tag">System Design</span>
-            </div>
-        </section>
-    </main>
+        <h1 class="reveal">Deven<br>Bhalerao</h1>
 
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; <span id="year"></span> Deven Bhalerao. Built with minimalism in mind.</p>
+        <p class="lede reveal">
+          I build the reporting layer that people actually make decisions with — dashboards for
+          EMEA &amp; UK media teams at <strong>dentsu</strong>, and before that for
+          <strong>JLL</strong> and <strong>FICO</strong>.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="mailto:devenbhalerao@gmail.com">
+            Get in touch
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn" href="assets/Deven-Bhalerao-CV.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19h14"/></svg>
+            Download CV
+          </a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/deven-bhalerao/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/DevenBhalerao" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-    </footer>
+      </div>
 
-    <script>
-        // Auto-update copyright year
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+      <div class="hero-figure reveal">
+        <figure class="portrait">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="assets/deven-400.webp 400w, assets/deven-800.webp 800w"
+              sizes="(max-width: 980px) min(86vw, 420px), 400px">
+            <img
+              src="assets/deven-400.jpg"
+              srcset="assets/deven-400.jpg 400w, assets/deven-800.jpg 800w"
+              sizes="(max-width: 980px) min(86vw, 420px), 400px"
+              width="400" height="500"
+              alt="Deven Bhalerao"
+              fetchpriority="high" decoding="async">
+          </picture>
+        </figure>
+      </div>
+    </div>
+
+    <!-- KPI strip -->
+    <ul class="kpi-strip reveal">
+      <li class="kpi">
+        <span class="kpi-value">2017</span>
+        <span class="kpi-label">Working in data since</span>
+      </li>
+      <li class="kpi">
+        <span class="kpi-value">3</span>
+        <span class="kpi-label">Global enterprises served</span>
+      </li>
+      <li class="kpi">
+        <span class="kpi-value">7</span>
+        <span class="kpi-label">Ad platforms reported on</span>
+      </li>
+      <li class="kpi">
+        <span class="kpi-value">3</span>
+        <span class="kpi-label">Performance awards</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ───────────────────────────── ABOUT ───────────────────────────── -->
+  <section class="sec" id="about">
+    <div class="sec-rail">
+      <span class="sec-num">01</span>
+      <h2 class="sec-label">About</h2>
+    </div>
+    <div class="sec-body">
+      <div class="prose reveal">
+        <p>
+          I'm a Business Intelligence Specialist at <strong>dentsu Global Services</strong>, working with
+          EMEA and UK markets. My days are spent turning digital advertising data into
+          client-facing reporting — Looker Studio and Power BI dashboards fed by Supermetrics and
+          the ad platforms themselves, covering Google Ads, Meta, TikTok, LinkedIn, DV360, CM360
+          and Google Analytics.
+        </p>
+        <p>
+          Before dentsu I spent just over two years at <strong>JLL</strong> building Tableau and Power BI
+          reporting on top of PostgreSQL, SQL Server, Redshift and S3, and a year at
+          <strong>FICO</strong> working alongside the product team — writing user stories in Jira by day
+          and reporting on delivery progress by week.
+        </p>
+        <p>
+          The foundation underneath all of it is engineering: a BE in Information Technology from
+          Mumbai University, an Oracle Java certification, and a first job writing Mulesoft and Java
+          connectors for the Collibra data governance platform. An MBA in IT on top of that is what
+          keeps me fluent on the business side of the table.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── EXPERIENCE ─────────────────────────── -->
+  <section class="sec" id="experience">
+    <div class="sec-rail">
+      <span class="sec-num">02</span>
+      <h2 class="sec-label">Experience</h2>
+    </div>
+    <div class="sec-body">
+      <ol class="timeline">
+
+        <li class="tl-item reveal">
+          <div class="tl-marker" aria-hidden="true"></div>
+          <div class="tl-head">
+            <h3 class="tl-role">Business Intelligence Specialist</h3>
+            <p class="tl-org">dentsu Global Services <span class="tl-sep">·</span> EMEA &amp; UK</p>
+            <p class="tl-date">Jun 2024 — Present</p>
+          </div>
+          <ul class="tl-points">
+            <li>Lead client-facing reporting and business intelligence projects for EMEA and UK markets using Looker Studio, Power BI, Excel and Supermetrics.</li>
+            <li>Develop custom dashboards across digital advertising platforms — Google Ads, Meta, TikTok, LinkedIn, DV360, CM360 and Google Analytics.</li>
+          </ul>
+          <p class="tl-award"><span class="award-mark" aria-hidden="true">★</span> <strong>“Make it Real”</strong> award for delivering high-impact solutions</p>
+          <ul class="chips">
+            <li>Looker Studio</li><li>Power BI</li><li>Supermetrics</li><li>Google Ads</li>
+            <li>Meta</li><li>TikTok</li><li>LinkedIn Ads</li><li>DV360</li><li>CM360</li>
+            <li>Google Analytics</li><li>Excel</li>
+          </ul>
+        </li>
+
+        <li class="tl-item reveal">
+          <div class="tl-marker" aria-hidden="true"></div>
+          <div class="tl-head">
+            <h3 class="tl-role">Business Intelligence Developer</h3>
+            <p class="tl-org">Jones Lang LaSalle (JLL)</p>
+            <p class="tl-date">Feb 2022 — May 2024</p>
+          </div>
+          <ul class="tl-points">
+            <li>Designed and maintained BI dashboards using Tableau, Power BI, PostgreSQL and SQL Server.</li>
+            <li>Managed ad-hoc reporting and data analysis with Excel, PowerQuery, Amazon Redshift and Amazon S3.</li>
+          </ul>
+          <p class="tl-award"><span class="award-mark" aria-hidden="true">★</span> <strong>“Client Service Champion”</strong> for exceptional contributions</p>
+          <ul class="chips">
+            <li>Tableau</li><li>Power BI</li><li>PostgreSQL</li><li>SQL Server</li>
+            <li>Amazon Redshift</li><li>Amazon S3</li><li>PowerQuery</li>
+          </ul>
+        </li>
+
+        <li class="tl-item reveal">
+          <div class="tl-marker" aria-hidden="true"></div>
+          <div class="tl-head">
+            <h3 class="tl-role">Business Analysis Associate</h3>
+            <p class="tl-org">Fair Isaac Corporation (FICO)</p>
+            <p class="tl-date">Mar 2021 — Feb 2022</p>
+          </div>
+          <ul class="tl-points">
+            <li>Created weekly project progress dashboards using Jira, Eazy BI and Power BI.</li>
+            <li>Worked with the product team to define requirements, prioritise tasks, and manage user stories and epics in Jira.</li>
+          </ul>
+          <p class="tl-award"><span class="award-mark" aria-hidden="true">★</span> <strong>“Spot Award”</strong> for significant contributions</p>
+          <ul class="chips">
+            <li>Jira</li><li>Eazy BI</li><li>Power BI</li><li>Requirements</li>
+          </ul>
+        </li>
+
+        <li class="tl-item reveal">
+          <div class="tl-marker" aria-hidden="true"></div>
+          <div class="tl-head">
+            <h3 class="tl-role">Management Intern</h3>
+            <p class="tl-org">Erfinden Technologies</p>
+            <p class="tl-date">Apr 2020 — Jul 2020</p>
+          </div>
+          <ul class="tl-points">
+            <li>Led a five-person team building an e-commerce portal on the MERN stack.</li>
+          </ul>
+          <ul class="chips">
+            <li>MongoDB</li><li>Express.js</li><li>React</li><li>Node.js</li>
+          </ul>
+        </li>
+
+        <li class="tl-note reveal">
+          <span class="tl-note-mark" aria-hidden="true"></span>
+          MBA in Information Technology · Symbiosis Centre for Information Technology · 2019 — 2021
+        </li>
+
+        <li class="tl-item reveal">
+          <div class="tl-marker" aria-hidden="true"></div>
+          <div class="tl-head">
+            <h3 class="tl-role">Operations Associate</h3>
+            <p class="tl-org">Rama Industries</p>
+            <p class="tl-date">Mar 2018 — May 2019</p>
+          </div>
+          <ul class="tl-points">
+            <li>Generated daily reports tracking business operations in Excel.</li>
+            <li>Supported payroll, inventory management and internal audits.</li>
+          </ul>
+          <ul class="chips">
+            <li>Excel</li><li>Operations reporting</li><li>Internal audit</li>
+          </ul>
+        </li>
+
+        <li class="tl-item reveal">
+          <div class="tl-marker" aria-hidden="true"></div>
+          <div class="tl-head">
+            <h3 class="tl-role">Data Governance Consultant</h3>
+            <p class="tl-org">Information Asset LLC</p>
+            <p class="tl-date">Jun 2017 — Feb 2018</p>
+          </div>
+          <ul class="tl-points">
+            <li>Built a Mulesoft and Java connector integrating the Collibra data governance tool with the Waterline data catalog.</li>
+            <li>Built and automated BPMN workflows for Collibra using the Eclipse plugin.</li>
+          </ul>
+          <ul class="chips">
+            <li>Mulesoft</li><li>Java</li><li>Collibra</li><li>Waterline</li><li>BPMN</li><li>Eclipse</li>
+          </ul>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────── SKILLS ───────────────────────────── -->
+  <section class="sec" id="skills">
+    <div class="sec-rail">
+      <span class="sec-num">03</span>
+      <h2 class="sec-label">Skills</h2>
+    </div>
+    <div class="sec-body">
+      <div class="skill-grid">
+        <article class="skill-card reveal">
+          <h3>BI &amp; Visualization</h3>
+          <ul class="chips">
+            <li>Looker Studio</li><li>Power BI</li><li>Tableau</li><li>Eazy BI</li><li>Excel</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3>Data &amp; SQL</h3>
+          <ul class="chips">
+            <li>SQL</li><li>PostgreSQL</li><li>SQL Server</li><li>Amazon Redshift</li>
+            <li>Amazon S3</li><li>PowerQuery</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3>Marketing &amp; Ad Platforms</h3>
+          <ul class="chips">
+            <li>Google Ads</li><li>Meta Ads</li><li>TikTok Ads</li><li>LinkedIn Ads</li>
+            <li>DV360</li><li>CM360</li><li>Google Analytics</li><li>Supermetrics</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3>Engineering &amp; Delivery</h3>
+          <ul class="chips">
+            <li>Python</li><li>Java</li><li>R</li><li>MERN stack</li><li>Mulesoft</li>
+            <li>Collibra</li><li>BPMN</li><li>Jira</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────── PROJECTS ──────────────────────────── -->
+  <section class="sec" id="projects">
+    <div class="sec-rail">
+      <span class="sec-num">04</span>
+      <h2 class="sec-label">Projects</h2>
+    </div>
+    <div class="sec-body">
+      <div class="project-grid">
+
+        <a class="project project-featured reveal" href="https://github.com/DevenBhalerao/YoutubeTranscriberWebApp" target="_blank" rel="noopener noreferrer">
+          <p class="project-tag">Featured</p>
+          <h3 class="project-name">YouTube Polyglot</h3>
+          <p class="project-desc">
+            A Streamlit app that pulls the audio from any YouTube URL with yt-dlp, transcribes it
+            using Sarvam AI's <span class="mono">saaras</span> speech-to-text model, and translates
+            the transcript across ten Indian languages plus English.
+          </p>
+          <ul class="chips">
+            <li>Python</li><li>Streamlit</li><li>Sarvam AI</li><li>yt-dlp</li><li>FFmpeg</li>
+          </ul>
+          <span class="project-link">View repository <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a class="project reveal" href="https://github.com/DevenBhalerao/PredictingTags" target="_blank" rel="noopener noreferrer">
+          <h3 class="project-name">Stack Overflow Tag Prediction</h3>
+          <p class="project-desc">
+            Predicts the tags of a Stack Overflow question from the text of its body — a
+            multi-label text classification problem.
+          </p>
+          <ul class="chips"><li>Python</li><li>NLP</li></ul>
+          <span class="project-link">View repository <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a class="project reveal" href="https://github.com/DevenBhalerao/Earning-Manipulation-Prediction" target="_blank" rel="noopener noreferrer">
+          <h3 class="project-name">Earnings Manipulation Prediction</h3>
+          <p class="project-desc">
+            A case-study model scoring companies for likely earnings manipulation from their
+            published financial ratios.
+          </p>
+          <ul class="chips"><li>R</li><li>Classification</li></ul>
+          <span class="project-link">View repository <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a class="project reveal" href="https://github.com/DevenBhalerao/SoftPlag" target="_blank" rel="noopener noreferrer">
+          <h3 class="project-name">SoftPlag</h3>
+          <p class="project-desc">
+            Software source-code plagiarism detection, with the accompanying research writeup
+            typeset in TeX.
+          </p>
+          <ul class="chips"><li>Research</li><li>TeX</li></ul>
+          <span class="project-link">View repository <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a class="project reveal" href="https://github.com/DevenBhalerao/Password_Manager" target="_blank" rel="noopener noreferrer">
+          <h3 class="project-name">Password Manager</h3>
+          <p class="project-desc">
+            A desktop application for storing and retrieving credentials locally, written in Java.
+          </p>
+          <ul class="chips"><li>Java</li><li>Desktop</li></ul>
+          <span class="project-link">View repository <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a class="project reveal" href="https://github.com/DevenBhalerao/OCRTool" target="_blank" rel="noopener noreferrer">
+          <h3 class="project-name">OCR Tool</h3>
+          <p class="project-desc">
+            An image-to-text converter written in Java — an early take on the same problem
+            YouTube Polyglot solves for audio.
+          </p>
+          <ul class="chips"><li>Java</li><li>OCR</li></ul>
+          <span class="project-link">View repository <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a class="project reveal" href="https://github.com/DevenBhalerao/homechef-heroku" target="_blank" rel="noopener noreferrer">
+          <h3 class="project-name">HomeChef</h3>
+          <p class="project-desc">
+            An e-commerce portal built on the MERN stack with a five-person team during the
+            Erfinden internship.
+          </p>
+          <ul class="chips"><li>MongoDB</li><li>Express</li><li>React</li><li>Node.js</li></ul>
+          <span class="project-link">View repository <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────── EDUCATION & RECOGNITION ──────────────────── -->
+  <section class="sec" id="education">
+    <div class="sec-rail">
+      <span class="sec-num">05</span>
+      <h2 class="sec-label">Education</h2>
+    </div>
+    <div class="sec-body">
+      <div class="edu-list">
+        <article class="edu reveal">
+          <h3>MBA, Information Technology</h3>
+          <p class="edu-org">Symbiosis Centre for Information Technology · Symbiosis International University</p>
+          <p class="edu-meta"><span>Pune, MH</span><span>2019 — 2021</span></p>
+        </article>
+        <article class="edu reveal">
+          <h3>BE, Information Technology</h3>
+          <p class="edu-org">Don Bosco Institute of Technology · Mumbai University</p>
+          <p class="edu-meta"><span>Mumbai, MH</span><span>2013 — 2017</span></p>
+        </article>
+      </div>
+
+      <h3 class="sub-label reveal">Recognition</h3>
+      <ul class="honours">
+        <li class="reveal">
+          <span class="honour-year">2017</span>
+          <span class="honour-text"><strong>1st Runner-up, Smart India Hackathon</strong> — national hackathon run by the Government of India, Coimbatore</span>
+        </li>
+        <li class="reveal">
+          <span class="honour-year">2016</span>
+          <span class="honour-text"><strong>Winner, student category, Mumbai Hackathon</strong> — Mumbai, Maharashtra</span>
+        </li>
+        <li class="reveal">
+          <span class="honour-year">2015</span>
+          <span class="honour-text"><strong>Oracle Certified Java Professional</strong> — certification completed in Mumbai</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────── CONTACT ──────────────────────────── -->
+  <section class="sec sec-contact" id="contact">
+    <div class="sec-rail">
+      <span class="sec-num">06</span>
+      <h2 class="sec-label">Contact</h2>
+    </div>
+    <div class="sec-body">
+      <p class="contact-lead reveal">
+        Open to conversations about business intelligence, analytics engineering,
+        and reporting that people trust.
+      </p>
+      <a class="contact-email reveal" href="mailto:devenbhalerao@gmail.com">devenbhalerao@gmail.com</a>
+      <div class="contact-links reveal">
+        <a href="https://www.linkedin.com/in/deven-bhalerao/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/DevenBhalerao" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="assets/Deven-Bhalerao-CV.pdf" download>Download CV</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© <span id="year">2026</span> Deven Bhalerao</p>
+    <p class="footer-note">Hand-built. No frameworks, no trackers.</p>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
 </body>
 </html>

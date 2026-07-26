@@ -1,0 +1,11 @@
+# Normalise text to LF in the repository regardless of the local platform.
+* text=auto eol=lf
+
+# CNAME is read verbatim by GitHub Pages — a trailing CR silently detaches the
+# custom domain, so pin it to LF explicitly.
+CNAME text eol=lf
+
+# Binary assets: never touch.
+*.woff2 binary
+*.png    binary
+*.pdf    binary

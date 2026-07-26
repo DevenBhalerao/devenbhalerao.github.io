@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not found — Deven Bhalerao</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<script>
+  (function () {
+    document.documentElement.classList.add('js');
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<main id="main">
+  <section class="notfound">
+    <p class="notfound-code">Error 404</p>
+    <h1>This page<br>doesn't exist.</h1>
+    <p class="lede">The link is broken or the page has moved. Everything worth reading is on the front page.</p>
+    <a class="btn btn-primary" href="/">
+      Back to the start
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+    </a>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© <span id="year">2026</span> Deven Bhalerao</p>
+    <p class="footer-note">devenbhalerao.com</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
