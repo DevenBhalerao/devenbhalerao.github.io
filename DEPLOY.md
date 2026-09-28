@@ -82,7 +82,7 @@ Three things in `assets/` were generated rather than hand-authored:
   text, so ATS parsers can read it). Deliberately omits the phone number, date of birth
   and home address that the source `.docx` carries in its header.
 - `og.png` — the 1200×630 link-preview card, built with Pillow.
-- `deven-400/800.webp` + `.jpg` — the hero portrait, cropped to 4:5 and resized from the
+- `deven-400/800.webp` + `.jpg` — the About portrait, cropped to 4:5 and resized from the
   full-resolution original. The original (5.4 MB PNG) is deliberately **not** in this repo
   — it lives one directory up as `deven-photo-original.png`, because a 5 MB binary in git
   history can never be removed without a rewrite.
@@ -100,5 +100,25 @@ WebP and JPEG, and keep the existing filenames. The markup references all four v
 All copy lives in `index.html` as plain markup — there is no CMS and no data file to
 thread through. Search for the section id (`#about`, `#experience`, …) and edit in place.
 
-Fonts are self-hosted in `assets/fonts/` (latin subset, ~100 KB total). There are no
-third-party requests on the page at all: no CDN, no analytics, no trackers.
+The charts are drawn by `main.js` from those same lists, so editing the HTML is enough:
+
+- a role in `#roles` (dates in `data-start` / `data-end`, tools in `.r-tools`) updates the
+  hero plant, the Experience rose, the About numbers and the Skills flow
+- a group in `#skill-groups` updates the right-hand side of the Skills flow. A role's tool
+  only flows into a group when the same name is in that group's list, or is mapped in
+  `ALIAS` / `EXTRA` in `main.js`
+- a project card's `.proj-tools` items update its ring (`data-k` picks the colour)
+- an item in `#honours` updates the Recognition seals and their counts
+
+The text behind each small "i" button lives in a hidden element beside it (for example
+`#exp-how`), named in the button's `aria-describedby`.
+
+When `styles.css` or `main.js` change, bump the `?v=` number where `index.html` and
+`404.html` link to them, so returning visitors don't get the old file from their cache.
+
+## Fonts
+
+Cormorant Garamond and Jost currently load from Google Fonts, so the page makes requests
+to `fonts.googleapis.com` and `fonts.gstatic.com`. The files in `assets/fonts/` belong to
+the previous design and are no longer used. Self-hosting the new fonts there would make
+the page free of third-party requests again.
