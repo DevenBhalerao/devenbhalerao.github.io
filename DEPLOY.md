@@ -81,11 +81,12 @@ Three things in `assets/` were generated rather than hand-authored:
 - `Deven-Bhalerao-CV.pdf` — built from the resume content with `fpdf2` (real selectable
   text, so ATS parsers can read it). Deliberately omits the phone number, date of birth
   and home address that the source `.docx` carries in its header.
-- `og.png` — the 1200×630 link-preview card, built with Pillow.
+- `og.png` — the 1200×630 link-preview card, built with Pillow in the site's pastel style:
+  name on the left, the career rose (petal area = months per role) on the right.
 - `deven-400/800.webp` + `.jpg` — the About portrait, cropped to 4:5 and resized from the
-  full-resolution original. The original (5.4 MB PNG) is deliberately **not** in this repo
-  — it lives one directory up as `deven-photo-original.png`, because a 5 MB binary in git
-  history can never be removed without a rewrite.
+  full-resolution original. The original (a 2 MB PNG) is deliberately **not** in this repo
+  — it lives one directory up as `deven-casual-slim-original.png`, because a large binary
+  in git history can never be removed without a rewrite.
 
 All are committed, so none need regenerating for a normal content edit.
 
@@ -113,12 +114,23 @@ The charts are drawn by `main.js` from those same lists, so editing the HTML is 
 The text behind each small "i" button lives in a hidden element beside it (for example
 `#exp-how`), named in the button's `aria-describedby`.
 
-When `styles.css` or `main.js` change, bump the `?v=` number where `index.html` and
-`404.html` link to them, so returning visitors don't get the old file from their cache.
+When `styles.css` or `main.js` change, bump the `?v=` number everywhere they are linked
+(`index.html`, `404.html` and each page under `projects/`), so returning visitors don't
+get the old file from their cache.
+
+## Project pages, search and AI tools
+
+- `projects/<name>/index.html` — one page per project with enough substance to describe
+  (currently YouTube Polyglot and Earnings Manipulation). They reuse `styles.css` and
+  `main.js`; copy one as a template, and add the new URL to `sitemap.xml` and `llms.txt`.
+- Structured data (the `application/ld+json` block in each page's head) describes the
+  person, profile, awards, credentials and projects for search engines. Keep it in step
+  with the visible content.
+- `llms.txt` — a plain-text summary of the CV for AI assistants. Update it whenever a role,
+  award or project changes.
 
 ## Fonts
 
-Cormorant Garamond and Jost currently load from Google Fonts, so the page makes requests
-to `fonts.googleapis.com` and `fonts.gstatic.com`. The files in `assets/fonts/` belong to
-the previous design and are no longer used. Self-hosting the new fonts there would make
-the page free of third-party requests again.
+Cormorant Garamond and Jost are self-hosted in `assets/fonts/` (latin subset, variable
+weights, ~100 KB total, SIL Open Font License — see `assets/fonts/LICENSE.txt`). The page
+makes no third-party requests.

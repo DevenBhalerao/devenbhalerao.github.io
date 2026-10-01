@@ -279,7 +279,8 @@
     sentinel.style.cssText = 'position:absolute;top:0;height:1px;width:1px;';
     document.body.prepend(sentinel);
     new IntersectionObserver(function (entries) { topbar.classList.toggle('is-stuck', !entries[0].isIntersecting); }).observe(sentinel);
-    var links = $$('.topnav a'), sections = links.map(function (a) { return $(a.getAttribute('href')); }).filter(Boolean), visible = {};
+    // Only in-page links (#about…); project pages link back with /#projects, which isn't a section here
+    var links = $$('.topnav a[href^="#"]'), sections = links.map(function (a) { return $(a.getAttribute('href')); }).filter(Boolean), visible = {};
     var so = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { visible[e.target.id] = e.isIntersecting; });
       var active = sections.filter(function (s) { return visible[s.id]; })[0];

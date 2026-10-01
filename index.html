@@ -24,10 +24,9 @@
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="preload" href="assets/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=3">
 
 <script>
   // Set the theme and the animation preference before first paint, so nothing flashes.
@@ -50,21 +49,74 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Deven Bhalerao",
-  "url": "https://devenbhalerao.com",
-  "email": "mailto:devenbhalerao@gmail.com",
-  "jobTitle": "Business Intelligence Specialist",
-  "worksFor": { "@type": "Organization", "name": "dentsu Global Services" },
-  "address": { "@type": "PostalAddress", "addressCountry": "IN" },
-  "alumniOf": [
-    { "@type": "CollegeOrUniversity", "name": "Symbiosis Centre for Information Technology" },
-    { "@type": "CollegeOrUniversity", "name": "Don Bosco Institute of Technology, Mumbai University" }
-  ],
-  "knowsAbout": ["Business Intelligence", "Data Analytics", "Looker Studio", "Power BI", "Tableau", "SQL", "Digital Advertising Analytics"],
-  "sameAs": [
-    "https://www.linkedin.com/in/deven-bhalerao/",
-    "https://github.com/DevenBhalerao"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://devenbhalerao.com/#website",
+      "url": "https://devenbhalerao.com/",
+      "name": "Deven Bhalerao",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://devenbhalerao.com/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://devenbhalerao.com/#profile",
+      "url": "https://devenbhalerao.com/",
+      "name": "Deven Bhalerao — Business Intelligence & Analytics",
+      "isPartOf": { "@id": "https://devenbhalerao.com/#website" },
+      "dateCreated": "2026-07-26",
+      "dateModified": "2026-10-01",
+      "mainEntity": { "@id": "https://devenbhalerao.com/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://devenbhalerao.com/#person",
+      "name": "Deven Bhalerao",
+      "url": "https://devenbhalerao.com/",
+      "image": "https://devenbhalerao.com/assets/deven-800.jpg",
+      "email": "mailto:devenbhalerao@gmail.com",
+      "description": "Business Intelligence Specialist at dentsu Global Services, based in India. Builds client-facing reporting in Looker Studio and Power BI from digital advertising data, and previously worked in BI at JLL and FICO.",
+      "jobTitle": "Business Intelligence Specialist",
+      "worksFor": { "@type": "Organization", "name": "dentsu Global Services", "url": "https://www.dentsu.com/" },
+      "address": { "@type": "PostalAddress", "addressCountry": "IN" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Symbiosis Centre for Information Technology" },
+        { "@type": "CollegeOrUniversity", "name": "Don Bosco Institute of Technology, Mumbai University" },
+        { "@type": "Organization", "name": "Jones Lang LaSalle (JLL)" },
+        { "@type": "Organization", "name": "Fair Isaac Corporation (FICO)" }
+      ],
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "name": "MBA, Information Technology", "credentialCategory": "degree", "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Symbiosis International University" } },
+        { "@type": "EducationalOccupationalCredential", "name": "BE, Information Technology", "credentialCategory": "degree", "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Mumbai University" } },
+        { "@type": "EducationalOccupationalCredential", "name": "Oracle Certified Java Professional", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Oracle" } }
+      ],
+      "award": [
+        "“Make it Real” award, dentsu Global Services",
+        "Client Service Champion, Jones Lang LaSalle (JLL)",
+        "Spot Award, Fair Isaac Corporation (FICO)",
+        "1st Runner-up, Smart India Hackathon 2017",
+        "Winner, student category, Mumbai Hackathon 2016"
+      ],
+      "knowsAbout": ["Business Intelligence", "Data Analytics", "Data Visualization", "Digital Advertising Analytics", "Looker Studio", "Power BI", "Tableau", "Excel", "SQL", "PostgreSQL", "SQL Server", "Amazon Redshift", "Supermetrics", "Google Ads", "Meta Ads", "DV360", "CM360", "Google Analytics", "Python", "R"],
+      "sameAs": [
+        "https://www.linkedin.com/in/deven-bhalerao/",
+        "https://github.com/DevenBhalerao"
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://devenbhalerao.com/#projects",
+      "name": "Projects by Deven Bhalerao",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "url": "https://devenbhalerao.com/projects/youtube-polyglot/", "name": "YouTube Polyglot" },
+        { "@type": "ListItem", "position": 2, "url": "https://github.com/DevenBhalerao/PredictingTags", "name": "Stack Overflow Tag Prediction" },
+        { "@type": "ListItem", "position": 3, "url": "https://devenbhalerao.com/projects/earnings-manipulation/", "name": "Earnings Manipulation Prediction" },
+        { "@type": "ListItem", "position": 4, "url": "https://github.com/DevenBhalerao/SoftPlag", "name": "SoftPlag" },
+        { "@type": "ListItem", "position": 5, "url": "https://github.com/DevenBhalerao/Password_Manager", "name": "Password Manager" },
+        { "@type": "ListItem", "position": 6, "url": "https://github.com/DevenBhalerao/OCRTool", "name": "OCR Tool" },
+        { "@type": "ListItem", "position": 7, "url": "https://github.com/DevenBhalerao/homechef-heroku", "name": "HomeChef" }
+      ]
+    }
   ]
 }
 </script>
@@ -250,11 +302,11 @@
     <div class="sec-head reveal"><span class="sec-num">04</span><h2 id="proj-h">Projects</h2><button class="info" type="button" aria-label="How to read the rings" aria-describedby="proj-how">i</button></div>
     <div id="proj-how" hidden>One ring per project, with a segment for each technology, coloured by its kind.</div>
     <div class="proj-grid" id="proj-grid" data-anim>
-      <a class="proj feat" href="https://github.com/DevenBhalerao/YoutubeTranscriberWebApp" target="_blank" rel="noopener noreferrer">
+      <a class="proj feat" href="projects/youtube-polyglot/">
         <span class="proj-ring" aria-hidden="true"></span>
         <span class="proj-go" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         <h3 class="proj-name">YouTube Polyglot</h3>
-        <p class="proj-desc">Transcribes any YouTube video, then translates it into ten Indian languages and English.</p>
+        <p class="proj-desc">Transcribes any YouTube video, then translates it into ten Indian languages.</p>
         <ul class="proj-tools"><li data-k="code">Python</li><li data-k="app">Streamlit</li><li data-k="ai">Sarvam AI</li><li data-k="media">yt-dlp</li><li data-k="media">FFmpeg</li></ul>
       </a>
       <a class="proj" href="https://github.com/DevenBhalerao/PredictingTags" target="_blank" rel="noopener noreferrer">
@@ -264,7 +316,7 @@
         <p class="proj-desc">Predicts a question's tags from its text.</p>
         <ul class="proj-tools"><li data-k="code">Python</li><li data-k="ai">NLP</li></ul>
       </a>
-      <a class="proj" href="https://github.com/DevenBhalerao/Earning-Manipulation-Prediction" target="_blank" rel="noopener noreferrer">
+      <a class="proj" href="projects/earnings-manipulation/">
         <span class="proj-ring" aria-hidden="true"></span>
         <span class="proj-go" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         <h3 class="proj-name">Earnings Manipulation Prediction</h3>
@@ -342,6 +394,6 @@
   </div>
 </footer>
 
-<script src="main.js?v=2" defer></script>
+<script src="main.js?v=3" defer></script>
 </body>
 </html>

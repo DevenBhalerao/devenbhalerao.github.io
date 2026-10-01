@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Predicting earnings manipulation from the Beneish ratios — Deven Bhalerao</title>
+<meta name="description" content="An MBA case study by Deven Bhalerao: five R classification models, from logistic regression to XGBoost, predicting earnings manipulation from the eight Beneish M-score ratios of 1,239 companies.">
+<meta name="author" content="Deven Bhalerao">
+<link rel="canonical" href="https://devenbhalerao.com/projects/earnings-manipulation/">
+<meta name="theme-color" content="#17141f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbf7f5" media="(prefers-color-scheme: light)">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://devenbhalerao.com/projects/earnings-manipulation/">
+<meta property="og:title" content="Earnings Manipulation Prediction — a project by Deven Bhalerao">
+<meta property="og:description" content="Five classification models in R, predicting earnings manipulation from the eight Beneish ratios.">
+<meta property="og:image" content="https://devenbhalerao.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=3">
+<script>
+  (function () {
+    var root = document.documentElement;
+    root.classList.add('js');
+    var motion = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    try {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') root.dataset.theme = theme;
+      var saved = localStorage.getItem('motion');
+      if (saved === 'on') motion = true;
+      if (saved === 'off') motion = false;
+    } catch (e) {}
+    if (motion) root.classList.add('motion-on');
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://devenbhalerao.com/projects/earnings-manipulation/#project",
+      "name": "Earnings Manipulation Prediction",
+      "description": "An MBA case study in R that predicts earnings manipulation from the eight Beneish M-score ratios of 1,239 companies, 39 of them manipulators. The rare class is rebalanced with SMOTE, and five classifiers are compared: logistic regression, a pruned CART decision tree, a random forest, a linear support vector machine and XGBoost.",
+      "url": "https://devenbhalerao.com/projects/earnings-manipulation/",
+      "codeRepository": "https://github.com/DevenBhalerao/Earning-Manipulation-Prediction",
+      "programmingLanguage": "R",
+      "dateCreated": "2020-03-30",
+      "keywords": ["earnings manipulation", "Beneish M-score", "fraud detection", "classification", "SMOTE", "XGBoost", "random forest", "R"],
+      "author": { "@id": "https://devenbhalerao.com/#person" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Deven Bhalerao", "item": "https://devenbhalerao.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://devenbhalerao.com/#projects" },
+        { "@type": "ListItem", "position": 3, "name": "Earnings Manipulation Prediction" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <a class="monogram" href="/" aria-label="Deven Bhalerao, home">DB</a>
+    <nav class="topnav" aria-label="Site">
+      <a href="/#projects">All projects</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9L5.3 5.3"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="page">
+  <p class="eyebrow">Project · R · MBA case study</p>
+  <h1>Earnings Manipulation Prediction</h1>
+  <p class="lede">Can a company's financial ratios give away that it is manipulating its earnings? A case study from my MBA, comparing five classification models.</p>
+
+  <ul class="nums four" aria-label="The data in numbers">
+    <li><span class="num">1,239</span><span class="num-l">companies</span></li>
+    <li><span class="num">39</span><span class="num-l">manipulators</span></li>
+    <li><span class="num">8</span><span class="num-l">ratios each</span></li>
+    <li><span class="num">5</span><span class="num-l">models compared</span></li>
+  </ul>
+
+  <h2>The ratios</h2>
+  <div class="prose"><p>Each company is described by the eight ratios of the <strong>Beneish M-score</strong>, a model built to spot companies that inflate their earnings.</p></div>
+  <dl class="facts">
+    <div><dt>DSRI</dt><dd>Days' sales in receivables index</dd></div>
+    <div><dt>GMI</dt><dd>Gross margin index</dd></div>
+    <div><dt>AQI</dt><dd>Asset quality index</dd></div>
+    <div><dt>SGI</dt><dd>Sales growth index</dd></div>
+    <div><dt>DEPI</dt><dd>Depreciation index</dd></div>
+    <div><dt>SGAI</dt><dd>Sales, general and administrative expenses index</dd></div>
+    <div><dt>ACCR</dt><dd>Accruals to total assets</dd></div>
+    <div><dt>LEVI</dt><dd>Leverage index</dd></div>
+  </dl>
+
+  <h2>The catch</h2>
+  <div class="prose">
+    <p>Only about <strong>3% of the companies are manipulators</strong>, so a model that always answers "no" would look 97% accurate and catch nothing. Before fitting, the training data was rebalanced with <strong>SMOTE</strong>, which creates synthetic examples of the rare class.</p>
+  </div>
+
+  <h2>The models</h2>
+  <ol class="steps">
+    <li style="--c:var(--sky)"><h3>Logistic regression</h3><p>The baseline, also checked with an ROC curve.</p></li>
+    <li style="--c:var(--sage)"><h3>Decision tree</h3><p>CART, pruned at the complexity with the lowest cross-validated error.</p></li>
+    <li style="--c:var(--peach)"><h3>Random forest</h3><p>100 trees, with a ranking of which ratios matter most.</p></li>
+    <li style="--c:var(--lilac)"><h3>SVM and XGBoost</h3><p>A linear support vector machine, and gradient-boosted trees over 100 rounds.</p></li>
+  </ol>
+  <div class="prose"><p>Every model was judged on a held-out test set, with a confusion matrix.</p></div>
+  <ul class="chips"><li>R</li><li>caret</li><li>rpart</li><li>randomForest</li><li>e1071</li><li>xgboost</li><li>SMOTE</li></ul>
+
+  <div class="page-actions">
+    <a class="btn btn-primary" href="https://github.com/DevenBhalerao/Earning-Manipulation-Prediction" target="_blank" rel="noopener noreferrer">
+      View the code on GitHub
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg>
+    </a>
+    <a class="btn btn-ghost" href="/#projects">All projects</a>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-copy">© <span id="year">2026</span> Deven Bhalerao</p>
+    <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="true" hidden>Animations on</button>
+  </div>
+</footer>
+
+<script src="/main.js?v=3" defer></script>
+</body>
+</html>
