@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube Polyglot: transcribe and translate YouTube into Indian languages — Deven Bhalerao</title>
+<meta name="description" content="YouTube Polyglot is a Streamlit app by Deven Bhalerao that transcribes any YouTube video with Sarvam AI's saaras speech-to-text model and translates it into ten Indian languages.">
+<meta name="author" content="Deven Bhalerao">
+<link rel="canonical" href="https://devenbhalerao.com/projects/youtube-polyglot/">
+<meta name="theme-color" content="#17141f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbf7f5" media="(prefers-color-scheme: light)">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://devenbhalerao.com/projects/youtube-polyglot/">
+<meta property="og:title" content="YouTube Polyglot — a project by Deven Bhalerao">
+<meta property="og:description" content="Transcribes any YouTube video and translates it into ten Indian languages, using Sarvam AI.">
+<meta property="og:image" content="https://devenbhalerao.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=3">
+<script>
+  (function () {
+    var root = document.documentElement;
+    root.classList.add('js');
+    var motion = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    try {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') root.dataset.theme = theme;
+      var saved = localStorage.getItem('motion');
+      if (saved === 'on') motion = true;
+      if (saved === 'off') motion = false;
+    } catch (e) {}
+    if (motion) root.classList.add('motion-on');
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://devenbhalerao.com/projects/youtube-polyglot/#project",
+      "name": "YouTube Polyglot",
+      "description": "A Streamlit web app that downloads the audio of a YouTube video with yt-dlp and FFmpeg, transcribes it with Sarvam AI's saaras:v3 speech-to-text model, and translates the transcript with sarvam-translate:v1 into Hindi, Bengali, Gujarati, Kannada, Malayalam, Marathi, Odia, Punjabi, Tamil or Telugu.",
+      "url": "https://devenbhalerao.com/projects/youtube-polyglot/",
+      "codeRepository": "https://github.com/DevenBhalerao/YoutubeTranscriberWebApp",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Streamlit",
+      "dateCreated": "2026-04-05",
+      "keywords": ["speech to text", "translation", "Indian languages", "Sarvam AI", "Streamlit", "yt-dlp"],
+      "author": { "@id": "https://devenbhalerao.com/#person" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Deven Bhalerao", "item": "https://devenbhalerao.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://devenbhalerao.com/#projects" },
+        { "@type": "ListItem", "position": 3, "name": "YouTube Polyglot" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <a class="monogram" href="/" aria-label="Deven Bhalerao, home">DB</a>
+    <nav class="topnav" aria-label="Site">
+      <a href="/#projects">All projects</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9L5.3 5.3"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="page">
+  <p class="eyebrow">Project · Python · 2026</p>
+  <h1>YouTube Polyglot</h1>
+  <p class="lede">A small web app that turns a YouTube video into text, then translates it into one of ten Indian languages.</p>
+
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li style="--c:var(--peach)"><h3>Paste a link</h3><p>A YouTube URL, plus the language the video is in and the language you want to read it in.</p></li>
+    <li style="--c:var(--lilac)"><h3>Pull the audio</h3><p>yt-dlp downloads the best audio track, and FFmpeg converts it to WAV.</p></li>
+    <li style="--c:var(--blush)"><h3>Transcribe</h3><p>Sarvam AI's <strong>saaras:v3</strong> speech-to-text model writes out what was said.</p></li>
+    <li style="--c:var(--sage)"><h3>Translate</h3><p>Sarvam's <strong>sarvam-translate:v1</strong> model translates the transcript. If both languages match, this step is skipped.</p></li>
+  </ol>
+
+  <h2>Languages</h2>
+  <div class="prose"><p>Videos can be in English or any of these ten languages, and transcripts can be translated into any of the ten.</p></div>
+  <ul class="chips">
+    <li>Hindi</li><li>Bengali</li><li>Gujarati</li><li>Kannada</li><li>Malayalam</li><li>Marathi</li><li>Odia</li><li>Punjabi</li><li>Tamil</li><li>Telugu</li>
+  </ul>
+
+  <h2>Details</h2>
+  <div class="prose">
+    <p>It runs on <strong>Streamlit</strong>, in a single Python file. You bring your own Sarvam API key, which is entered in a password field and sent only to Sarvam. The temporary audio file is deleted after every run.</p>
+  </div>
+  <ul class="chips"><li>Python</li><li>Streamlit</li><li>Sarvam AI</li><li>yt-dlp</li><li>FFmpeg</li></ul>
+
+  <div class="page-actions">
+    <a class="btn btn-primary" href="https://github.com/DevenBhalerao/YoutubeTranscriberWebApp" target="_blank" rel="noopener noreferrer">
+      View the code on GitHub
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg>
+    </a>
+    <a class="btn btn-ghost" href="/#projects">All projects</a>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-copy">© <span id="year">2026</span> Deven Bhalerao</p>
+    <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="true" hidden>Animations on</button>
+  </div>
+</footer>
+
+<script src="/main.js?v=3" defer></script>
+</body>
+</html>

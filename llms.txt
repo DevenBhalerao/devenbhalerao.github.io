@@ -1,0 +1,44 @@
+# Deven Bhalerao
+
+> Deven Bhalerao is a Business Intelligence Specialist at dentsu Global Services, based in India. He builds client-facing reporting in Looker Studio and Power BI from digital advertising data, and has worked in data since 2017, including BI roles at Jones Lang LaSalle (JLL) and Fair Isaac Corporation (FICO).
+
+## Experience
+
+- Business Intelligence Specialist, dentsu Global Services (Jun 2024 – present): leads client-facing reporting and BI projects for EMEA and UK markets in Looker Studio, Power BI, Excel and Supermetrics, with dashboards across Google Ads, Meta, TikTok, LinkedIn, DV360, CM360 and Google Analytics. Received the "Make it Real" award.
+- Business Intelligence Developer, Jones Lang LaSalle (JLL) (Feb 2022 – May 2024): BI dashboards in Tableau, Power BI, PostgreSQL and SQL Server; ad-hoc analysis with Excel, PowerQuery, Amazon Redshift and Amazon S3. Named Client Service Champion.
+- Business Analysis Associate, Fair Isaac Corporation (FICO) (Mar 2021 – Feb 2022): weekly project dashboards in Jira, Eazy BI and Power BI; requirements and user stories with the product team. Received a Spot Award.
+- Management Intern, Erfinden Technologies (Apr 2020 – Jul 2020): led a five-person team building an e-commerce portal on the MERN stack.
+- Operations Associate, Rama Industries (Mar 2018 – May 2019): daily operations reporting in Excel; payroll, inventory and internal audit support.
+- Data Governance Consultant, Information Asset LLC (Jun 2017 – Feb 2018): a Mulesoft and Java connector between Collibra and the Waterline data catalog; BPMN workflows for Collibra.
+
+## Education and recognition
+
+- MBA, Information Technology, Symbiosis Centre for Information Technology, Symbiosis International University, Pune (2019 – 2021)
+- BE, Information Technology, Don Bosco Institute of Technology, Mumbai University (2013 – 2017)
+- 1st Runner-up, Smart India Hackathon (2017); Winner, student category, Mumbai Hackathon (2016)
+- Oracle Certified Java Professional (2015)
+
+## Skills
+
+- Marketing and ad platforms: Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads, DV360, CM360, Google Analytics, Supermetrics
+- BI and visualization: Looker Studio, Power BI, Tableau, Eazy BI, Excel
+- Data and SQL: SQL, PostgreSQL, SQL Server, Amazon Redshift, Amazon S3, PowerQuery
+- Engineering and delivery: Python, Java, R, MERN stack, Mulesoft, Collibra, BPMN, Jira
+
+## Projects
+
+- [YouTube Polyglot](https://devenbhalerao.com/projects/youtube-polyglot/): a Streamlit app that transcribes YouTube videos with Sarvam AI's saaras:v3 model and translates them into ten Indian languages
+- [Earnings Manipulation Prediction](https://devenbhalerao.com/projects/earnings-manipulation/): five R classifiers predicting earnings manipulation from the eight Beneish M-score ratios
+- [Stack Overflow Tag Prediction](https://github.com/DevenBhalerao/PredictingTags): multi-label tag prediction from question text, in Python
+- [SoftPlag](https://github.com/DevenBhalerao/SoftPlag): source-code plagiarism detection, with a research write-up
+- [Password Manager](https://github.com/DevenBhalerao/Password_Manager): a Java desktop app for storing credentials locally
+- [OCR Tool](https://github.com/DevenBhalerao/OCRTool): an image-to-text converter in Java
+- [HomeChef](https://github.com/DevenBhalerao/homechef-heroku): an e-commerce portal on the MERN stack
+
+## Links
+
+- [Website](https://devenbhalerao.com/)
+- [CV (PDF)](https://devenbhalerao.com/assets/Deven-Bhalerao-CV.pdf)
+- [LinkedIn](https://www.linkedin.com/in/deven-bhalerao/)
+- [GitHub](https://github.com/DevenBhalerao)
+- Email: devenbhalerao@gmail.com
