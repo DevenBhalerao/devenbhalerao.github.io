@@ -76,11 +76,9 @@ Then open <http://localhost:8000>. Nothing to install, nothing to compile.
 
 ## Regenerating the assets
 
-Three things in `assets/` were generated rather than hand-authored:
+Two things in `assets/` were generated rather than hand-authored. (The CV PDF was removed
+from the site on 2026-10-18 for privacy; a copy sits one directory up, outside the repo.)
 
-- `Deven-Bhalerao-CV.pdf` — built from the resume content with `fpdf2` (real selectable
-  text, so ATS parsers can read it). Deliberately omits the phone number, date of birth
-  and home address that the source `.docx` carries in its header.
 - `og.png` — the 1200×630 link-preview card, built with Pillow in the site's pastel style:
   name on the left, the career rose (petal area = months per role) on the right.
 - `deven-400/800.webp` + `.jpg` — the About portrait, cropped to 4:5 and resized from the
@@ -126,7 +124,11 @@ get the old file from their cache.
 - Structured data (the `application/ld+json` block in each page's head) describes the
   person, profile, awards, credentials and projects for search engines. Keep it in step
   with the visible content.
-- `llms.txt` — a plain-text summary of the CV for AI assistants. Update it whenever a role,
+- IndexNow: the 32-character `.txt` file at the root is the site's IndexNow key. After a
+  push is live, run `python ../tools/indexnow.py` (outside the repo) to tell Bing and other
+  IndexNow engines which pages changed; add removed paths as arguments so they get dropped.
+  Google ignores IndexNow; use Search Console for Google.
+- `llms.txt` — a plain-text career summary for AI assistants. Update it whenever a role,
   award or project changes.
 
 ## Fonts

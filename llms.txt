@@ -38,7 +38,6 @@
 ## Links
 
 - [Website](https://devenbhalerao.com/)
-- [CV (PDF)](https://devenbhalerao.com/assets/Deven-Bhalerao-CV.pdf)
 - [LinkedIn](https://www.linkedin.com/in/deven-bhalerao/)
 - [GitHub](https://github.com/DevenBhalerao)
 - Email: devenbhalerao@gmail.com
