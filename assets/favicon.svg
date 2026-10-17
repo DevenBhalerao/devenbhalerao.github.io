@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <style>
-    .bg { fill: #fbf7f5; }
-    .bar { fill: #a894a4; }
-    .bar-hi { fill: #e38fa6; }
+    .bg { fill: #fcf8f3; }
+    .bar { fill: #b3a091; }
+    .bar-hi { fill: #ee9f5f; }
     @media (prefers-color-scheme: dark) {
-      .bg { fill: #17141f; }
-      .bar { fill: #6f5f73; }
-      .bar-hi { fill: #f4c9d1; }
+      .bg { fill: #1a1612; }
+      .bar { fill: #6f5f52; }
+      .bar-hi { fill: #f6bf8f; }
     }
   </style>
   <rect class="bg" width="64" height="64" rx="14"/>

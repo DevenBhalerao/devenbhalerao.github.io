@@ -140,8 +140,8 @@
   function ym(s) { if (!s) return null; var p = s.split('-'); return [Number(p[0]), Number(p[1] || 1)]; }
   function idx(a) { return a[0] * 12 + a[1]; }
   // Each employer keeps one colour everywhere: petal, leaf and flow.
-  var RCOL = { ia: '#dcd2f1', rama: '#cadff0', erf: '#cfe2cf', fico: '#f6e7b6', jll: '#f8d8c2', dentsu: '#f4c9d1' };
-  var RDEEP = { ia: '#b9aee0', rama: '#9fc4e4', erf: '#a8cfa8', fico: '#e8d38a', jll: '#efbc9a', dentsu: '#e9a5b4' };
+  var RCOL = { ia: '#dcd2f1', rama: '#cadff0', erf: '#cfe2cf', fico: '#f6e7b6', jll: '#c9e6dc', dentsu: '#f9cfa8' };
+  var RDEEP = { ia: '#b9aee0', rama: '#9fc4e4', erf: '#a8cfa8', fico: '#e8d38a', jll: '#93cbb9', dentsu: '#f0a96e' };
   var ROLES = $$('#roles > li').map(function (li) {
     var s = ym(li.getAttribute('data-start')), e = ym(li.getAttribute('data-end'));
     return {
@@ -170,7 +170,7 @@
     var defs = '', body = '', data = [];
     function P(a, rad) { return (Math.cos(a) * rad).toFixed(2) + ' ' + (Math.sin(a) * rad).toFixed(2); }
     ROLES.forEach(function (r, i) {
-      var a0 = -Math.PI / 2 + i * TAU / n + gap / 2, a1 = a0 + TAU / n - gap, c = RCOL[r.id] || '#e8dfe6';
+      var a0 = -Math.PI / 2 + i * TAU / n + gap / 2, a1 = a0 + TAU / n - gap, c = RCOL[r.id] || '#ece2d8';
       var rr = Math.sqrt(HOLE * HOLE + (R * R - HOLE * HOLE) * r.months / maxM);
       var d = 'M' + P(a0, HOLE) + ' L' + P(a0, rr) + ' A' + f1(rr) + ' ' + f1(rr) + ' 0 0 1 ' + P(a1, rr) + ' L' + P(a1, HOLE) + ' A' + HOLE + ' ' + HOLE + ' 0 0 0 ' + P(a0, HOLE) + 'Z';
       defs += '<radialGradient id="' + prefix + i + '" cx="0" cy="0" r="' + f1(rr) + '" gradientUnits="userSpaceOnUse"><stop offset=".2" style="stop-color:var(--petal-core)"/><stop offset=".55" stop-color="' + c + '" stop-opacity=".85"/><stop offset="1" stop-color="' + c + '"/></radialGradient>';
@@ -381,14 +381,14 @@
   safe('skills', function () {
     var svg = $('#flow'), stage = $('#flow-stage'), line = $('#flow-line'), box = $('#skill-groups');
     if (!svg || !box || !ROLES.length) return;
-    var GCOL = { ads: '#f5c6a8', bi: '#e9b8d3', data: '#b3d6ea', eng: '#bfe3cd' };
+    var GCOL = { ads: '#f9cfa8', bi: '#dccff0', data: '#b3d6ea', eng: '#bfe3cd' };
     // Names on the role chips that differ from the skills lists
     var ALIAS = { 'Meta': 'Meta Ads', 'TikTok': 'TikTok Ads', 'MongoDB': 'MERN stack', 'Express.js': 'MERN stack', 'React': 'MERN stack', 'Node.js': 'MERN stack' };
     var EXTRA = { 'Waterline': 'eng', 'Eclipse': 'eng' };
     var groups = $$('.sg', box).map(function (el) {
       var key = el.getAttribute('data-group');
       el.style.setProperty('--c', GCOL[key]);
-      return { key: key, el: el, name: $('h3', el).textContent.trim(), color: GCOL[key] || '#e8dfe6', skills: $$('li', el).map(function (li) { return li.textContent.trim(); }) };
+      return { key: key, el: el, name: $('h3', el).textContent.trim(), color: GCOL[key] || '#ece2d8', skills: $$('li', el).map(function (li) { return li.textContent.trim(); }) };
     });
     function groupOf(tool) {
       var t = ALIAS[tool] || tool, i;
@@ -434,8 +434,8 @@
 
   safe('projects', function () {
     var KIND = {
-      code: { name: 'Code', c: '#9fc4e4' }, data: { name: 'Data', c: '#a8cfa8' }, app: { name: 'Apps and web', c: '#efbc9a' },
-      ai: { name: 'AI and ML', c: '#e9a5b4' }, media: { name: 'Media', c: '#b9aee0' }, doc: { name: 'Research and writing', c: '#e8d38a' }
+      code: { name: 'Code', c: '#9fc4e4' }, data: { name: 'Data', c: '#a8cfa8' }, app: { name: 'Apps and web', c: '#f0a96e' },
+      ai: { name: 'AI and ML', c: '#93cbb9' }, media: { name: 'Media', c: '#b9aee0' }, doc: { name: 'Research and writing', c: '#e8d38a' }
     };
     var grid = $('#proj-grid'), R = 26, gap = 10 * Math.PI / 180;
     if (!grid) return;
@@ -462,10 +462,10 @@
     var box = $('#rec'), wrap = $('#rec-rows'), list = $('#honours');
     if (!box || !wrap || !list) return;
     var KINDS = [
-      { key: 'work', label: 'Awards at work', c: '#f4c9d1', d: '#e9a5b4', t: '#a24d6d' },
+      { key: 'work', label: 'Awards at work', c: '#f9cfa8', d: '#f0a96e', t: '#a3561f' },
       { key: 'degree', label: 'Degrees', c: '#dcd2f1', d: '#b9aee0', t: '#6f5fa8' },
       { key: 'hack', label: 'Hackathons', c: '#cfe2cf', d: '#a8cfa8', t: '#4f7f54' },
-      { key: 'cert', label: 'Certification', c: '#f8d8c2', d: '#efbc9a', t: '#a8643c' }
+      { key: 'cert', label: 'Certification', c: '#f6e7b6', d: '#e8d38a', t: '#7d6410' }
     ];
     var items = $$('li', list).map(function (li) {
       return { li: li, kind: li.getAttribute('data-kind'), date: li.getAttribute('data-date') || '', mid: li.getAttribute('data-mid') || '', ring: li.getAttribute('data-ring') || '', name: $('strong', li).textContent.trim() };
